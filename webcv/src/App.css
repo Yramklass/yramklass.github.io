@@ -20,7 +20,9 @@
 
   height: 100%;
   height: 50cqh;
-  
+  align-content: center;
+  justify-content: center;
+  /* text-align: center; */
  
 }
 .bioBox{
@@ -28,4 +30,16 @@
   
    margin-top: 3cqh;
 
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  font-weight: 500;
 }

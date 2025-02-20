@@ -4,6 +4,7 @@ import AboutComponent from './components/AboutComponent'
 import BioComponent from './components/BioComponent'
 import HeaderComponent from './components/HeaderComponent'
 import ProjectsComponent from './components/ProjectsComponent'
+import ProjectShowcase from './components/ProjectShowcase'
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <HeaderComponent/>
         <BioComponent/>
         <AboutComponent/>
-        <ProjectsComponent/>
+        <ProjectShowcase/>
       </div>
     </>
   )
