@@ -42,7 +42,7 @@ const ProjectShowcase = () => {
   };
 
   return (
-    <Container >
+    <Container className='projectBox'>
       <h2 className="text-center mb-5">My Projects</h2>
       
       <Row xs={1} md={2} lg={3} className="g-4">

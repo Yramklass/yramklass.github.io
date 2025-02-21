@@ -1,4 +1,8 @@
 
+.headerBox{
+  padding:3cqh;
+  /* border-top: 10px solid green; */
+}
 .aboutBox{
   text-align: center;
   justify-self: center;
@@ -6,30 +10,36 @@
   height: auto;
   border: 4px black solid;
   margin: 3cqh;
+  margin-top: 4cqh;
+  padding:5px;
+  padding-top: 10px;
 }
 
 .imageBox {
   height: 100%;
 
-  border: 2px black solid;
-  height: 50cqh;
+  border: 10px green solid;
+  height: 60cqh;
   
 }
 
 .contactBox {
 
   height: 100%;
-  height: 50cqh;
+  height: 60cqh;
   align-content: center;
   justify-content: center;
   /* text-align: center; */
  
 }
 .bioBox{
-   height: 50cqh;
+   height: 60cqh;
   
-   margin-top: 3cqh;
-
+  margin-top: 2cqh;
+  padding-left: 2cqw;
+  padding-right:2cqw;
+ 
+  
 }
 
 .card {
@@ -42,4 +52,8 @@
 
 .badge {
   font-weight: 500;
+}
+
+.projectBox{
+  margin-top:2cqh;
 }

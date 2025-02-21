@@ -4,7 +4,7 @@ import { Col, Container } from 'react-bootstrap'
 const HeaderComponent = () => {
   return (
     <div >
-        <Container fluid style={{border:'5px black solid'}} >
+        <Container fluid className='headerBox'>
             <Col>
             </Col>
             <Col style={{textAlign:'center'}}>
