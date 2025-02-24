@@ -1,6 +1,8 @@
 
 .headerBox{
-  padding:3cqh;
+  padding:2cqh;
+  margin-bottom: 3cqh;
+  border-bottom: 5px solid black;
   /* border-top: 10px solid green; */
 }
 .aboutBox{
@@ -19,21 +21,21 @@
   height: 100%;
 
   border: 10px green solid;
-  height: 60cqh;
+  height: 75cqh;
   
 }
 
 .contactBox {
 
   height: 100%;
-  height: 60cqh;
+  height: 75cqh;
   align-content: center;
   justify-content: center;
   /* text-align: center; */
  
 }
 .bioBox{
-   height: 60cqh;
+   height: 75cqh;
   
   margin-top: 2cqh;
   padding-left: 2cqw;
@@ -56,4 +58,40 @@
 
 .projectBox{
   margin-top:2cqh;
+}
+
+.carousel-container {
+  padding: 20px 0;
+  height: 50cqh;
+}
+
+.carousel-item-padding {
+  padding: 0 10px;
+}
+
+.project-card {
+  width: auto;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-showcase{
+  margin-top: 3cqh;
+  border-top: 5px solid black;
+
+}
+
+.project-carousel{
+  border-top: 5px solid green;
+  border-bottom: 5px solid green;
+}
+
+
+
+.footer{
+  padding: 10px;
 }
