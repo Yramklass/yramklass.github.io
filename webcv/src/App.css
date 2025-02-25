@@ -2,40 +2,46 @@
 .headerBox{
   padding:2cqh;
   margin-bottom: 3cqh;
-  border-bottom: 5px solid black;
+  border-bottom: 10px solid black;
+  background-color: darkseagreen;
+  color: white;
+  /* font-weight: bold; */
   /* border-top: 10px solid green; */
 }
 .aboutBox{
   text-align: center;
   justify-self: center;
-  width: 60cqw;
+  width: auto;
   height: auto;
   border: 4px black solid;
   margin: 3cqh;
   margin-top: 4cqh;
   padding:5px;
   padding-top: 10px;
+  background-color: darkseagreen;
+  color: white;
+  font-size: 18px;
+  border-radius: 15px;
 }
 
 .imageBox {
   height: 100%;
-
   border: 10px green solid;
-  height: 75cqh;
-  
+  height: 80cqh;
+  border-radius: 15px; /* Add this line for rounded corners */
 }
 
 .contactBox {
 
   height: 100%;
-  height: 75cqh;
-  align-content: center;
-  justify-content: center;
-  /* text-align: center; */
+  height: auto;
+  /* align-content: center;
+  justify-content: center; */
+  text-align: center;
  
 }
 .bioBox{
-   height: 75cqh;
+   height: 80cqh;
   
   margin-top: 2cqh;
   padding-left: 2cqw;

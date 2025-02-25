@@ -1,6 +1,7 @@
     import React from 'react'
     import { Col, Container, Row } from 'react-bootstrap'
     import { ImageComponent } from './ImageComponent'
+    import AboutComponent from './AboutComponent'
 
     import ContactComponent from './ContactComponent'
 
@@ -8,11 +9,13 @@
     return (
         <div><Container fluid className='bioBox'>
     <Row>
-        <Col md={8}>
+        <Col md={7}>
         <ImageComponent/>
         </Col>
-        <Col md={4}>
-        <ContactComponent/>
+        <Col md={5} style={{alignContent:'center', justifyContent:'center', textAlign:'center'}}>
+        <Row style={{marginTop:'5cqh'}}>    <AboutComponent/></Row>
+        <Row style={{margin:'5cqh'}}><ContactComponent/></Row>
+       
         </Col>
     </Row>
     </Container></div>

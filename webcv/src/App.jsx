@@ -15,7 +15,7 @@ function App() {
       <div>
         <HeaderComponent/>
         <BioComponent/>
-        <AboutComponent/>
+        {/* <AboutComponent/> */}
         <ProjectShowcase/>
         <FooterComponent/>
       </div>
