@@ -5,7 +5,7 @@ export const ImageComponent = () => {
   return (
     <div>
         <Container fluid className='imageBox'>
-            <img src='lmao.jpg' style={{width:'100%', height:'100%'}}>
+            <img src='lmao.jpg' style={{width:'100%', height:'100%', borderRadius:'15px'}}>
             </img>
         </Container>
     </div>
