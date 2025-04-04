@@ -10,77 +10,79 @@ const ProjectShowcase = () => {
   const projects = [
     {
       id: 1,
-      title: "ML Image Classification",
+      title: "Brain-Computer Interface Simulation",
       category: "Machine Learning",
-      shortDescription: "Medical image classification using CNN",
-      description: "A deep learning model for classifying medical images...",
-      technologies: ["Python", "TensorFlow", "OpenCV"],
-      thumbnail: "lmao.jpg",
-      images: ["lmao.jpg"],
+      shortDescription: "CNN-based brain wave classification for motion intent detection",
+      description: "A deep learning system that utilizes convolutional neural networks (CNNs) to classify EEG brain wave signals corresponding to left and right motor imagery. Designed for brain-computer interface (BCI) applications in neural control systems.",
+      technologies: ["Python", "TensorFlow", "C++", "Rust"],
+      thumbnail: "brainwave_interface_thumb.jpg",
+      images: ["brainwave_interface_1.jpg"],
       githubLink: "https://github.com/...",
       demoLink: "https://demo..."
     },
     {
       id: 2,
-      title: "Real-time Chat Platform",
-      category: "Web Development",
-      shortDescription: "Full-stack chat application with real-time features",
-      description: "A modern chat application supporting real-time messaging, file sharing, and video calls. Features include end-to-end encryption, message persistence, read receipts, and user presence indicators. Built with a microservices architecture and deployed on AWS.",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "AWS", "WebRTC"],
-      thumbnail: "/path/to/chat-thumb.jpg",
-      images: ["/path/to/chat1.jpg", "/path/to/chat2.jpg"],
+      title: "Property Development Catalogue",
+      category: "Full Stack Web Development",
+      shortDescription: "Real estate listing & reservation platform",
+      description: "A responsive full-stack web application designed for real estate companies. Enables dynamic listing of units, browsing of property details, online reservations, and customer data management for estate agents.",
+      technologies: ["React", "Node.js", "SQL", "Spring Boot", "Java", "JWT", "Redux"],
+      thumbnail: "property_catalogue_thumb.jpg",
+      images: ["property_catalogue_1.jpg", "property_catalogue_2.jpg"],
       githubLink: "https://github.com/yourusername/chat-app",
       demoLink: "https://chat-demo.com"
     },
     {
       id: 3,
-      title: "Stock Market Predictor",
+      title: "Automatic Reading Tutor",
       category: "Machine Learning",
-      shortDescription: "LSTM-based stock price prediction model",
-      description: "An advanced time series analysis tool that predicts stock market trends using LSTM neural networks. Incorporates sentiment analysis from social media and news sources. Backtested on 10 years of historical data with a prediction accuracy of 76%.",
-      technologies: ["Python", "Keras", "NLTK", "pandas", "PostgreSQL"],
-      thumbnail: "/path/to/stock-thumb.jpg",
-      images: ["/path/to/stock1.jpg", "/path/to/stock2.jpg"],
+      shortDescription: "Phoneme recognition & pronunciation correction system",
+      description: "An educational web tool using Transformer-based models to evaluate spoken language input and provide feedback on phoneme accuracy. Helps learners improve pronunciation through real-time ML-powered tutoring.",
+      technologies: ["Python", "Django", "Transformers", "PyTorch", "SQL", "React", "Node.js"],
+      thumbnail: "reading_tutor_thumb.jpg",
+      images: ["reading_tutor_1.jpg", "reading_tutor_2.jpg"],
       githubLink: "https://github.com/yourusername/stock-predictor",
       demoLink: "https://stock-predictor-demo.com"
     },
     {
       id: 4,
-      title: "E-commerce Platform",
+      title: "Employee Management System",
       category: "Web Development",
-      shortDescription: "Full-featured online marketplace",
-      description: "A complete e-commerce solution with features including product management, cart functionality, payment processing, order tracking, and admin dashboard. Implements OAuth2 authentication and includes a review system with image uploads.",
-      technologies: ["Next.js", "TypeScript", "Stripe", "MySQL", "Redux", "AWS S3"],
-      thumbnail: "/path/to/ecom-thumb.jpg",
-      images: ["/path/to/ecom1.jpg", "/path/to/ecom2.jpg"],
+      shortDescription: "CRUD-based employee management web application",
+      description: "A streamlined platform to manage company personnel records. Includes functionality for creating, reading, updating, and deleting employee profiles, with backend integration and secure user roles.",
+      technologies: ["Node.js", "JavaScript", "React", "SQL", "Spring Boot", "Java"],
+      thumbnail: "employee_management_thumb.jpg",
+      images: ["employee_management_1.jpg", "employee_management_2.jpg"],
       githubLink: "https://github.com/yourusername/ecommerce",
       demoLink: "https://ecommerce-demo.com"
     },
     {
       id: 5,
-      title: "Gesture Control System",
-      category: "Computer Vision",
-      shortDescription: "Real-time hand gesture recognition for PC control",
-      description: "A computer vision system that recognizes hand gestures in real-time to control PC functions. Uses MediaPipe for hand tracking and custom gesture recognition algorithms. Supports volume control, media playback, and presentation controls.",
-      technologies: ["Python", "MediaPipe", "OpenCV", "PyAutoGUI"],
-      thumbnail: "/path/to/gesture-thumb.jpg",
-      images: ["/path/to/gesture1.jpg", "/path/to/gesture2.jpg"],
+      title: "Python Personal Assistant",
+      category: "Voice AI / Natural Language Processing",
+      shortDescription: "Voice-controlled Python assistant using Google APIs",
+      description: "A lightweight virtual assistant built with Python that understands voice commands to perform tasks like answering queries via Google and WolframAlpha APIs, providing a hands-free interaction model.",
+      technologies: ["Python", "Speech Recognition", "JSON", "WolframAlpha"],
+      thumbnail: "python_assistant_thumb.jpg",
+      images: ["python_assistant_1.jpg", "python_assistant_2.jpg"],
       githubLink: "https://github.com/yourusername/gesture-control",
       demoLink: "https://gesture-demo.com"
     },
-    {
-      id: 6,
-      title: "Smart Home Dashboard",
-      category: "IoT",
-      shortDescription: "IoT device management platform",
-      description: "A centralized dashboard for managing smart home devices. Features include real-time device status monitoring, automated scheduling, energy usage analytics, and mobile app control. Supports multiple IoT protocols and includes a REST API.",
-      technologies: ["React", "Node.js", "MQTT", "InfluxDB", "GraphQL", "Docker"],
-      thumbnail: "/path/to/iot-thumb.jpg",
-      images: ["/path/to/iot1.jpg", "/path/to/iot2.jpg"],
-      githubLink: "https://github.com/yourusername/smart-home",
-      demoLink: "https://smart-home-demo.com"
-    }
+    // Uncomment to include
+    // {
+    //   id: 6,
+    //   title: "AI Honey Analysis",
+    //   category: "Computer Vision",
+    //   shortDescription: "Deep learning pollen detection in honey samples",
+    //   description: "A computer vision project using CNNs to identify and classify South African pollen grains in honey, aiding in authenticity verification and quality analysis.",
+    //   technologies: ["Python", "TensorFlow"],
+    //   thumbnail: "honey_analysis_thumb.jpg",
+    //   images: ["honey_analysis_1.jpg", "honey_analysis_2.jpg"],
+    //   githubLink: "https://github.com/yourusername/smart-home",
+    //   demoLink: "https://smart-home-demo.com"
+    // }
   ];
+  
 
   return (
     <div className="project-showcase">
