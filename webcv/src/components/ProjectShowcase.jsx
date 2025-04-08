@@ -18,7 +18,7 @@ const ProjectShowcase = () => {
       thumbnail: "brainwave_interface_thumb.jpg",
       images: ["brainwave_interface_1.jpg"],
       githubLink: "https://github.com/...",
-      demoLink: "https://demo..."
+      demoLink: ""
     },
     {
       id: 2,
@@ -29,8 +29,8 @@ const ProjectShowcase = () => {
       technologies: ["React", "Node.js", "SQL", "Spring Boot", "Java", "JWT", "Redux"],
       thumbnail: "property_catalogue_thumb.jpg",
       images: ["property_catalogue_1.jpg", "property_catalogue_2.jpg"],
-      githubLink: "https://github.com/yourusername/chat-app",
-      demoLink: "https://chat-demo.com"
+      githubLink: "",
+      demoLink: ""
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const ProjectShowcase = () => {
       thumbnail: "reading_tutor_thumb.jpg",
       images: ["reading_tutor_1.jpg", "reading_tutor_2.jpg"],
       githubLink: "https://github.com/yourusername/stock-predictor",
-      demoLink: "https://stock-predictor-demo.com"
+      demoLink: ""
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ const ProjectShowcase = () => {
       thumbnail: "employee_management_thumb.jpg",
       images: ["employee_management_1.jpg", "employee_management_2.jpg"],
       githubLink: "https://github.com/yourusername/ecommerce",
-      demoLink: "https://ecommerce-demo.com"
+      demoLink: ""
     },
     {
       id: 5,
@@ -66,21 +66,21 @@ const ProjectShowcase = () => {
       thumbnail: "python_assistant_thumb.jpg",
       images: ["python_assistant_1.jpg", "python_assistant_2.jpg"],
       githubLink: "https://github.com/yourusername/gesture-control",
-      demoLink: "https://gesture-demo.com"
+      demoLink: ""
     },
     // Uncomment to include
-    // {
-    //   id: 6,
-    //   title: "AI Honey Analysis",
-    //   category: "Computer Vision",
-    //   shortDescription: "Deep learning pollen detection in honey samples",
-    //   description: "A computer vision project using CNNs to identify and classify South African pollen grains in honey, aiding in authenticity verification and quality analysis.",
-    //   technologies: ["Python", "TensorFlow"],
-    //   thumbnail: "honey_analysis_thumb.jpg",
-    //   images: ["honey_analysis_1.jpg", "honey_analysis_2.jpg"],
-    //   githubLink: "https://github.com/yourusername/smart-home",
-    //   demoLink: "https://smart-home-demo.com"
-    // }
+    {
+      id: 6,
+      title: "AI Honey Analysis",
+      category: "Computer Vision",
+      shortDescription: "Deep learning pollen detection in honey samples",
+      description: "A computer vision project using CNNs to identify and classify South African pollen grains in honey, aiding in authenticity verification and quality analysis.",
+      technologies: ["Python", "Pytorch","Vision Transformers","Object Detection","Image Classification"],
+      thumbnail: "honey_analysis_thumb.jpg",
+      images: ["honey_analysis_1.jpg", "honey_analysis_2.jpg"],
+      githubLink: "https://github.com/yourusername/smart-home",
+      demoLink: ""
+    }
   ];
   
 

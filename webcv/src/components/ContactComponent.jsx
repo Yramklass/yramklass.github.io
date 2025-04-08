@@ -26,15 +26,32 @@ const ContactComponent = () => {
           }}
         >
           <h3 style={{paddingBottom:'2cqh'}}>Get in Touch!</h3>
-          <p className="d-flex align-items-center justify-content-center">
-            <IoMailSharp className="me-2" />  yramklass@gmail.com
-          </p>
-          <p className="d-flex align-items-center justify-content-center">
+          
+          <a 
+            href="mailto:yramklass@gmail.com" 
+            className="d-flex align-items-center justify-content-center text-decoration-none" 
+            style={{ color: 'inherit' }}
+          >
+            <IoMailSharp className="me-2" /> yramklass@gmail.com
+          </a>
+          
+          <a 
+            href="tel:+27823691475" 
+            className="d-flex align-items-center justify-content-center text-decoration-none" 
+            style={{ color: 'inherit', margin: '10px 0' }}
+          >
             <FaPhone className="me-2" /> (+27) 823691475
-          </p>
-          <p className="d-flex align-items-center justify-content-center">
+          </a>
+          
+          <a 
+            href="https://github.com/yramklass" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="d-flex align-items-center justify-content-center text-decoration-none" 
+            style={{ color: 'inherit' }}
+          >
             <FaGithub className="me-2" /> @yramklass
-          </p>
+          </a>
         </div>
       </Row>
     </Container>
