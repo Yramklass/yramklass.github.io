@@ -1,15 +1,13 @@
-
 .headerBox{
-  padding:2cqh;
+  padding: 2cqh;
   margin-bottom: 4cqh;
-  border-bottom: 10px solid green;
+  border-bottom: 10px solid #00BFFF; /* Changed from green to Electric Blue */
   background-color: black;
   color: white;
-  
+ 
   /* font-weight: bold; */
   /* border-top: 10px solid green; */
 }
-
 /* conic gradient border */
 .conic-gradient-border {
   border-bottom: 10px solid;
@@ -20,7 +18,7 @@
     hsl(221, 100%, 60%),
     hsl(229, 100%, 60%),
     hsl(303, 100%, 60%),
-    
+   
     hsl(170, 100%, 60%),
     hsl(221, 100%, 60%),
     hsl(271, 100%, 60%),
@@ -36,24 +34,21 @@
   border: 5px black solid;
   margin: 3cqh;
   margin-top: 4cqh;
-  padding:5px;
+  padding: 5px;
   padding-top: 10px;
-  background-color: green;
+  background-color: #1976D2; /* Changed from green to Electric Blue */
   color: white;
   font-size: 18px;
   border-radius: 15px;
 }
-
 .imageBox {
   height: 100%;
   /* border: 10px black solid; */
-  height: 80cqh;
+  height: 90cqh;
   /* border-radius: 15px;  */
-  
+ 
 }
-
 .contactBox {
-
   height: 100%;
   height: auto;
   /* align-content: center;
@@ -62,50 +57,42 @@
  
 }
 .bioBox{
-   height: 80cqh;
-  
+   height: 90cqh;
+ 
   margin-top: 2cqh;
   padding-left: 2cqw;
-  padding-right:2cqw;
+  padding-right: 2cqw;
  
-  
+ 
 }
-
 .card {
   transition: all 0.3s ease;
 }
-
 .card:hover {
   transform: translateY(-5px);
 }
-
 .badge {
   font-weight: 500;
 }
-
 .projectBox{
-  margin-top:2cqh;
+  margin-top: 2cqh;
 }
-
 .carousel-container {
   padding: 20px 0;
-  height: 50cqh;
+  height: 60cqh;
+  /* background-color: black; */
 }
-
 .carousel-item-padding {
   padding: 0 10px;
 }
-
 .project-card {
   width: auto;
   height: 100%;
   transition: transform 0.3s ease;
 }
-
 .project-card:hover {
   transform: translateY(-5px);
 }
-
 .project-showcase{
   margin-top: 4cqh;
   border-top: 10px solid black;
@@ -113,19 +100,15 @@
 .project-showcase h3 {
   margin-bottom: 0;
   font-weight: bold;
+  background-color: #F0F2F5; /* Changed from lightgray to the suggested Light Gray */
 }
-
  
-
 .project-carousel{
-  border-top: 10px solid green;
-  border-bottom: 10px solid green;
-   margin-top: 0;
+  border-top: 10px solid #00BFFF; /* Changed from green to Electric Blue */
+  border-bottom: 10px solid #00BFFF; /* Changed from green to Electric Blue */
+  margin-top: 0;
 }
-
-
-
-
 .footer{
   padding: 10px;
 }
+

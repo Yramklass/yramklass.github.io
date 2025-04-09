@@ -12,9 +12,9 @@
         <Col md={7}>
         <ImageComponent/>
         </Col>
-        <Col md={5} style={{alignContent:'center', justifyContent:'center', textAlign:'center'}}>
-        <Row style={{marginTop:'5cqh'}}>    <AboutComponent/></Row>
-        <Row style={{margin:'5cqh'}}><ContactComponent/></Row>
+        <Col md={5} style={{alignContent:'center', }}>
+        <Row >    <AboutComponent/></Row>
+       
        
         </Col>
     </Row>

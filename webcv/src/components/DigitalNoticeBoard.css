@@ -1,0 +1,175 @@
+.digital-board {
+    background-color: #0b0f1a;
+    
+    padding: 40px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 15px;
+  }
+  
+  .file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .file-card {
+    background-color: #1a1f2e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #2c344d;
+  }
+  
+  .file-card:hover {
+    border-color: #007bff;
+  }
+  
+  .file-icon {
+    margin-bottom: 10px;
+    color: #00aaff;
+  }
+  
+  .file-title {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* Modal styles */
+  .file-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 1040;
+  }
+  
+  .file-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    background-color: #1f2536;
+    color: white;
+    border-radius: 12px;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+    overflow: hidden;
+  }
+  
+  .modal-header-bar {
+    background-color: #2b3143;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .window-buttons {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .window-buttons .btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .red { background-color: #ff5f56; }
+  .yellow { background-color: #ffbd2e; }
+  .green { background-color: #27c93f; }
+  
+  .window-title {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .modal-body-content {
+    padding: 16px;
+  }
+  .intro-text {
+    text-align: center;
+    color: #00aaff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .contact-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 30px;
+  }
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: #1a1f2e;
+    border: 1px solid #2c344d;
+    color: #00aaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  }
+  
+  .contact-icon:hover {
+    transform: scale(1.1);
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Update these styles in your CSS file */
+
+.file-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-height: 80vh;
+    background-color: #1f2536;
+    color: white;
+    border-radius: 12px;
+    z-index: 1050;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+    overflow: hidden;
+    transform-origin: center;
+  }
+  
+  .file-modal.maximized {
+    width: 90vw !important;
+    height: 90vh !important;
+    max-height: 90vh !important;
+    border-radius: 8px;
+  }
+  
+  .file-modal.minimized {
+    height: auto !important;
+    overflow: hidden;
+  }
+  
+  .modal-body-content {
+    padding: 16px;
+    overflow-y: auto;
+    max-height: calc(80vh - 40px);
+  }
+  
+  .file-modal.maximized .modal-body-content {
+    max-height: calc(90vh - 40px);
+  }
