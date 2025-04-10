@@ -1,8 +1,8 @@
 .headerBox{
-  padding: 2cqh;
+  padding: 3cqh;
   margin-bottom: 4cqh;
   border-bottom: 10px solid #00BFFF; /* Changed from green to Electric Blue */
-  background-color: black;
+  background-color: #0b0f1a;
   color: white;
  
   /* font-weight: bold; */
@@ -31,7 +31,7 @@
   justify-self: center;
   width: auto;
   height: auto;
-  border: 5px black solid;
+  border: 5px #0b0f1a solid;
   margin: 3cqh;
   margin-top: 4cqh;
   padding: 5px;
@@ -40,10 +40,11 @@
   color: white;
   font-size: 18px;
   border-radius: 15px;
+  
 }
 .imageBox {
   height: 100%;
-  /* border: 10px black solid; */
+  /* border: 10px #0b0f1a solid; */
   height: 90cqh;
   /* border-radius: 15px;  */
  
@@ -62,8 +63,9 @@
   margin-top: 2cqh;
   padding-left: 2cqw;
   padding-right: 2cqw;
- 
- 
+  /* background-image: url("bg_4.jpg");
+  */
+  background-color: #F0F2F5;
 }
 .card {
   transition: all 0.3s ease;
@@ -80,7 +82,8 @@
 .carousel-container {
   padding: 20px 0;
   height: 60cqh;
-  /* background-color: black; */
+  /* background-color: #0b0f1a; */
+  background-color: #F0F2F5;
 }
 .carousel-item-padding {
   padding: 0 10px;
@@ -95,12 +98,13 @@
 }
 .project-showcase{
   margin-top: 4cqh;
-  border-top: 10px solid black;
+  border-top: 10px solid #00BFFF;
 }
 .project-showcase h3 {
   margin-bottom: 0;
   font-weight: bold;
-  background-color: #F0F2F5; /* Changed from lightgray to the suggested Light Gray */
+  background-color: #0b0f1a; /* Changed from lightgray to the suggested Light Gray */
+  color: white;
 }
  
 .project-carousel{
@@ -110,5 +114,7 @@
 }
 .footer{
   padding: 10px;
+  background-color: #0b0f1a;
+  color: white;
 }
 

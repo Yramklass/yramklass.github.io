@@ -106,7 +106,7 @@ const ProjectShowcase = () => {
 
   return (
     <div className="project-showcase">
-      <h3 style={{textAlign:'center', padding:'2cqh', backgroundColor:'lightgray'}}>Projects</h3>
+      <h3 style={{textAlign:'center', padding:'2cqh', }}>Projects</h3>
       <div className='project-carousel'>
         <ProjectCarousel
           projects={sortedProjects}

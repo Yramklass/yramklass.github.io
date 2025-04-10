@@ -173,3 +173,25 @@
   .file-modal.maximized .modal-body-content {
     max-height: calc(90vh - 40px);
   }
+
+  .glassy {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+  }
+
+  .device-frame {
+    width: 375px;
+    max-width: 95vw;
+    height: 700px;
+    margin: auto;
+    border-radius: 30px;
+    border: 2px solid #2c344d;
+    background: #0b0f1a;
+    box-shadow: 0 0 60px rgba(0, 123, 255, 0.2);
+    overflow: hidden;
+    position: relative;
+  }
+  

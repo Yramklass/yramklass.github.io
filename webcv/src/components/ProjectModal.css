@@ -1,0 +1,57 @@
+.custom-modal-dialog {
+    background-color: transparent;
+  }
+  
+  .custom-modal-content {
+    background-color: rgba(31, 37, 54, 0.85);
+    color: white;
+    border-radius: 12px;
+    border: 1px solid #2c344d;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+  }
+  
+  .modal-header-bar {
+    background-color: #2b3143;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .window-buttons {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .window-buttons .btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .red { background-color: #ff5f56; }
+  .yellow { background-color: #ffbd2e; }
+  .green { background-color: #27c93f; }
+  
+  .window-title {
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 500;
+  }
+  
+  .custom-modal-body {
+    padding: 20px;
+    color: #e0e0e0;
+  }
+  
+  .custom-badge {
+    background-color: #1a1f2e !important;
+    border: 1px solid #2c344d;
+    color: #00aaff;
+    font-weight: 500;
+  }
+  

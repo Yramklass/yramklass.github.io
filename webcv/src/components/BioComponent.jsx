@@ -9,10 +9,10 @@
     return (
         <div><Container fluid className='bioBox'>
     <Row>
-        <Col md={7}>
+        <Col md={6}>
         <ImageComponent/>
         </Col>
-        <Col md={5} style={{alignContent:'center', }}>
+        <Col md={6} style={{alignContent:'center', }}>
         <Row >    <AboutComponent/></Row>
        
        
