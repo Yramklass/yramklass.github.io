@@ -1,13 +1,5 @@
-.headerBox{
-  padding: 3cqh;
-  margin-bottom: 4cqh;
-  border-bottom: 10px solid #00BFFF; /* Changed from green to Electric Blue */
-  background-color: #0b0f1a;
-  color: white;
- 
-  /* font-weight: bold; */
-  /* border-top: 10px solid green; */
-}
+
+
 /* conic gradient border */
 .conic-gradient-border {
   border-bottom: 10px solid;
@@ -27,19 +19,17 @@
   );
 }
 .aboutBox{
-  text-align: center;
-  justify-self: center;
+  
   width: auto;
-  height: auto;
-  border: 5px #0b0f1a solid;
-  margin: 3cqh;
-  margin-top: 4cqh;
-  padding: 5px;
-  padding-top: 10px;
-  background-color: #1976D2; /* Changed from green to Electric Blue */
+  height: 80cqh;
+
+ 
+  
+  padding: 5cqh;
+  background-color: silver; /* Changed from green to Electric Blue */
   color: white;
-  font-size: 18px;
-  border-radius: 15px;
+ 
+ 
   
 }
 .imageBox {
@@ -97,7 +87,7 @@
   transform: translateY(-5px);
 }
 .project-showcase{
-  margin-top: 4cqh;
+
   border-top: 10px solid #00BFFF;
 }
 .project-showcase h3 {

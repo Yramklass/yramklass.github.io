@@ -8,16 +8,15 @@
     const BioComponent = () => {
     return (
         <div><Container fluid className='bioBox'>
-    <Row>
-        <Col md={6}>
+  
+       
         <ImageComponent/>
-        </Col>
-        <Col md={6} style={{alignContent:'center', }}>
-        <Row >    <AboutComponent/></Row>
+        
+      
        
        
-        </Col>
-    </Row>
+        
+    
     </Container></div>
     )
     }

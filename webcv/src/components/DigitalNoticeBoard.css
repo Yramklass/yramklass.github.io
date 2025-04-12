@@ -157,6 +157,8 @@
     height: 90vh !important;
     max-height: 90vh !important;
     border-radius: 8px;
+    background-color: #111827 !important; /* Solid dark navy/black */
+    backdrop-filter: none !important;     /* Remove glassy effect */
   }
   
   .file-modal.minimized {

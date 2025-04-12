@@ -1,0 +1,96 @@
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    height:10cqh;
+    top: 0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+    background: rgba(11, 15, 26, 0.3);
+    color: white;
+    backdrop-filter: blur(10px);
+  }
+  
+  .custom-navbar.solid {
+    background: #0b0f1a;
+  }
+  
+  .custom-navbar.hidden {
+    transform: translateY(-100%);
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .signature-logo {
+    height: 8cqh;
+    object-fit: contain;
+  }
+  
+  .nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1rem;
+    position: relative;
+  }
+  
+  .nav-right a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: white;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-right a:hover::after {
+    width: 100%;
+  }
+  
+  .headerBox {
+    height: 100cqh;
+    background-image: url("pfp.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 3cqh;
+    
+    border-bottom: 10px solid #0b0f1a;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-center {
+
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .header-center h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    
+  }
+  
+  .header-center h3 {
+    font-size: 1.5rem;
+    color: #ddd;
+  }
+  .nav-right .active {
+    font-weight: bold;
+    border-bottom: 2px solid white; /* or a color that fits your design */
+  }
+  

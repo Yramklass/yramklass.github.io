@@ -1,7 +1,6 @@
-// ProjectShowcase.jsx
 import React, { useState } from 'react';
-import ProjectCarousel from './ProjectCarousel';
 import ProjectModal from './ProjectModal';
+import './ProjectShowcase.css'; // <- new CSS file for custom styles
 
 const ProjectShowcase = () => {
   const [showModal, setShowModal] = useState(false);
@@ -104,21 +103,48 @@ const ProjectShowcase = () => {
     return dateB - dateA;
   });
 
+
   return (
-    <div className="project-showcase">
-      <h3 style={{textAlign:'center', padding:'2cqh', }}>Projects</h3>
-      <div className='project-carousel'>
-        <ProjectCarousel
-          projects={sortedProjects}
-          setShowModal={setShowModal}
-          setSelectedProject={setSelectedProject}
-        />
-        <ProjectModal
-          show={showModal}
-          onHide={() => setShowModal(false)}
-          project={selectedProject}
-        />
+    <div className="project-showcase-container">
+      {/* Left text section */}
+      <div className="project-intro">
+        <h2>Projects</h2>
+        <p>
+          I've worked on a range of projects, touching on several cutting-edge
+          computer science fields—from deep learning and natural language processing
+          to full-stack web applications and voice-controlled assistants.
+        </p>
       </div>
+
+      {/* Right vertical carousel */}
+      <div className="project-carousel-vertical">
+        <div className="carousel-scroll">
+          {sortedProjects.map((project) => (
+            <div
+            key={project.id}
+            className="project-card"
+            onClick={() => {
+              setSelectedProject(project);
+              setShowModal(true);
+            }}
+            style={{ backgroundImage: `url(${project.thumbnail})` }}
+          >
+            <div className="project-info">
+              <h4>{project.title}</h4>
+              <p>{project.shortDescription}</p>
+            </div>
+          </div>
+          
+          ))}
+        </div>
+      </div>
+
+      {/* Modal */}
+      <ProjectModal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        project={selectedProject}
+      />
     </div>
   );
 };

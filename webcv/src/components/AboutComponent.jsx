@@ -6,7 +6,8 @@ import DigitalNoticeBoard from './DigitalNoticeBoard'
 const AboutComponent = () => {
   return (
     <div>
-        <Container fluid>
+        <Container fluid className='aboutBox'>
+          
             <DigitalNoticeBoard/>
         </Container>
     </div>

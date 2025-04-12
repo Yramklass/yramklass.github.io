@@ -2,6 +2,7 @@
 import './App.css'
 import AboutComponent from './components/AboutComponent'
 import BioComponent from './components/BioComponent'
+import DetailsSection from './components/DetailsSection'
 import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
 import ProjectsComponent from './components/ProjectsComponent'
@@ -14,8 +15,9 @@ function App() {
     <>
       <div>
         <HeaderComponent/>
-        <BioComponent/>
+        {/* <BioComponent/> */}
         {/* <AboutComponent/> */}
+        <DetailsSection/>
         <ProjectShowcase/>
         <FooterComponent/>
       </div>

@@ -99,74 +99,77 @@ export default function DigitalNoticeBoard() {
   };
 
   return (
-    <div className="digital-board glassy">
-      <div className="digital-board">
-        <h1 className="intro-text">Hello, World! 👋</h1>
-
-        <div className="file-grid">
-          {notes.map((note) => (
-            <motion.div
-              key={note.id}
-              className="file-card glassy"
-              whileHover={{ y: -6, boxShadow: "0 0 10px rgba(0, 123, 255, 0.5)" }}
-              onClick={() => setOpenNote(note)}
-            >
-              <div className="file-icon">{note.icon}</div>
-              <div className="file-title">{note.title}</div>
-            </motion.div>
-          ))}
+    <>
+      <div className="digital-board glassy">
+        <div className="digital-board">
+          <h1 className="intro-text">Hello, World! 👋</h1>
+  
+          <div className="file-grid">
+            {notes.map((note) => (
+              <motion.div
+                key={note.id}
+                className="file-card glassy"
+                whileHover={{ y: -6, boxShadow: "0 0 10px rgba(0, 123, 255, 0.5)" }}
+                onClick={() => setOpenNote(note)}
+              >
+                <div className="file-icon">{note.icon}</div>
+                <div className="file-title">{note.title}</div>
+              </motion.div>
+            ))}
+          </div>
+  
+          <div className="contact-footer">
+            <a href="mailto:yramklass@gmail.com" target="_blank" rel="noopener noreferrer" className="contact-icon glassy" title="Email">
+              <IoMailSharp size={24} />
+            </a>
+            <a href="tel:+27823691475" className="contact-icon glassy" title="Call">
+              <FaPhone size={24} />
+            </a>
+            <a href="https://github.com/yramklass" target="_blank" rel="noopener noreferrer" className="contact-icon glassy" title="GitHub">
+              <FaGithub size={24} />
+            </a>
+          </div>
         </div>
-
-        <div className="contact-footer">
-          <a href="mailto:yramklass@gmail.com" target="_blank" rel="noopener noreferrer" className="contact-icon glassy" title="Email">
-            <IoMailSharp size={24} />
-          </a>
-          <a href="tel:+27823691475" className="contact-icon glassy" title="Call">
-            <FaPhone size={24} />
-          </a>
-          <a href="https://github.com/yramklass" target="_blank" rel="noopener noreferrer" className="contact-icon glassy" title="GitHub">
-            <FaGithub size={24} />
-          </a>
-        </div>
-
-        <AnimatePresence>
-          {openNote && (
-            <motion.div
-              className={`file-modal glassy ${isMaximized ? "maximized" : ""} ${isMinimized ? "minimized" : ""}`}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-                width: isMaximized ? "90%" : "90%",
-                height: isMinimized ? "auto" : isMaximized ? "85%" : "auto",
-                x: "-50%",
-                y: "-50%"
-              }}
-              exit={{
-                scale: 0.9,
-                opacity: 0,
-                transition: { duration: 0.15 }
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-            >
-              <div className="modal-header-bar">
-                <div className="window-buttons">
-                  <span className="btn red" onClick={handleClose} />
-                  <span className="btn yellow" onClick={() => setIsMinimized(!isMinimized)} />
-                  <span className="btn green" onClick={() => setIsMaximized(!isMaximized)} />
-                </div>
-                <span className="window-title">{openNote?.title}</span>
-              </div>
-              {!isMinimized && (
-                <div className="modal-body-content">
-                  {openNote?.content}
-                </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
-    </div>
+  
+      <AnimatePresence>
+        {openNote && (
+          <motion.div
+            className={`file-modal glassy ${isMaximized ? "maximized" : ""} ${isMinimized ? "minimized" : ""}`}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+              width: isMaximized ? "90%" : "90%",
+              height: isMinimized ? "auto" : isMaximized ? "85%" : "auto",
+              x: "-50%",
+              y: "-50%"
+            }}
+            exit={{
+              scale: 0.9,
+              opacity: 0,
+              transition: { duration: 0.15 }
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+          >
+            <div className="modal-header-bar">
+              <div className="window-buttons">
+                <span className="btn red" onClick={handleClose} />
+                <span className="btn yellow" onClick={() => setIsMinimized(!isMinimized)} />
+                <span className="btn green" onClick={() => setIsMaximized(!isMaximized)} />
+              </div>
+              <span className="window-title">{openNote?.title}</span>
+            </div>
+            {!isMinimized && (
+              <div className="modal-body-content">
+                {openNote?.content}
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
+  
 }
