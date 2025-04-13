@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Container, Row, Col, Button, OverlayTrigger, Tooltip,
   Badge, Toast, ToastContainer
 } from 'react-bootstrap';
 import {
-  FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload, FaQrcode
+  FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload, FaQrcode, FaShareAlt
 } from 'react-icons/fa';
 import { QRCodeSVG } from 'qrcode.react';
 
@@ -12,9 +12,26 @@ const ContactSection = () => {
   const [showToast, setShowToast] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
   const [showQR, setShowQR] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile on component mount and on window resize
+    const checkMobile = () => {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   const email = 'yramklass@gmail.com';
   const phone = '+27823691475';
+  const websiteUrl = 'https://yramklass.github.io';
+  const vcardUrl = `${websiteUrl}/downloads/yashramklass.vcf`;
 
   const handleCopy = (text, label) => {
     navigator.clipboard.writeText(text);
@@ -23,7 +40,32 @@ const ContactSection = () => {
     setTimeout(() => setShowToast(true), 50); // Small delay to force rerender
   };
 
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const handleShareContact = async () => {
+    // Contact info to share
+    const contactInfo = {
+      title: "Yash Ramklass",
+      text: "Contact information for Yash Ramklass",
+      url: vcardUrl
+    };
+
+    // Check if browser supports sharing
+    if (navigator.share) {
+      try {
+        await navigator.share(contactInfo);
+        setToastMsg("Thanks for sharing!");
+        setShowToast(true);
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          setToastMsg("Error sharing contact");
+          setShowToast(true);
+        }
+      }
+    } else {
+      // Fallback for browsers that don't support the Web Share API
+      setToastMsg("Sharing not supported on this browser");
+      setShowToast(true);
+    }
+  };
 
   const contactItems = [
     {
@@ -87,64 +129,68 @@ const ContactSection = () => {
           ))}
         </Row>
 
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 contact-buttons">
           <Button variant="outline-dark" className="me-2" href="/downloads/Yash_CV_2025.pdf" download>
             <FaDownload className="me-1" /> Download CV
           </Button>
+          
           <Button variant="outline-dark" className="me-2" href="/downloads/yashramklass.vcf" download>
             <FaDownload className="me-1" /> Download vCard
           </Button>
-          <Button variant="outline-dark" onClick={() => setShowQR(!showQR)}>
-            <FaQrcode className="me-1" /> {showQR ? 'Hide QR' : 'Show QR'}
-          </Button>
+          
+          {isMobile ? (
+            <Button variant="outline-dark" onClick={handleShareContact}>
+              <FaShareAlt className="me-1" /> Share Contact
+            </Button>
+          ) : (
+            <Button variant="outline-dark" onClick={() => setShowQR(!showQR)}>
+              <FaQrcode className="me-1" /> {showQR ? 'Hide QR' : 'Show QR'}
+            </Button>
+          )}
         </div>
 
-        {showQR && (
+        {!isMobile && showQR && (
           <div className="text-center mt-3">
-            <QRCodeSVG value="https://yramklass.github.io/downloads/yashramklass.vcf" size={128} />
+            <QRCodeSVG value={vcardUrl} size={128} />
             <p className="mt-2">Scan to add contact</p>
           </div>
         )}
       </Container>
 
       <ToastContainer
-  position="bottom-center"
-  className="p-3"
-  style={{
-    zIndex: 9999,
-    position: 'fixed',
-    bottom: '20px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-  }}
->
-  <Toast
-    show={showToast}
-    onClose={() => setShowToast(false)}
-    delay={2500}
-    autohide
-    className="custom-toast"
-  >
-    <Toast.Body>{toastMsg}</Toast.Body>
-  </Toast>
-</ToastContainer>
+        position="bottom-center"
+        className="p-3"
+        style={{
+          zIndex: 9999,
+          position: 'fixed',
+          bottom: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        }}
+      >
+        <Toast
+          show={showToast}
+          onClose={() => setShowToast(false)}
+          delay={2500}
+          autohide
+          className="custom-toast"
+        >
+          <Toast.Body>{toastMsg}</Toast.Body>
+        </Toast>
+      </ToastContainer>
 
-<style>{`
-  .custom-toast {
-    background-color:#lightgrey; /* soft blue */
-    border: 1px solid #00BFFF;
-    color: black;
-    font-weight: 500;
-    border-radius: 10px;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    text-align:center;
-  }
-`}</style>
-
-
-      {/* Inline Styling */}
       <style>{`
+        .custom-toast {
+          background-color: #f8f9fa;
+          border: 1px solid #00BFFF;
+          color: black;
+          font-weight: 500;
+          border-radius: 10px;
+          padding: 0.75rem 1rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          text-align: center;
+        }
+
         .contact-icon {
           width: 100px;
           height: 100px;
@@ -171,11 +217,24 @@ const ContactSection = () => {
           transition: color 0.4s ease;
         }
 
-        .contact-section{
-            padding-top: 75px;
-            padding-bottom: 75px;
+        .contact-section {
+          padding-top: 75px;
+          padding-bottom: 75px;
         }
-      
+        
+        @media (max-width: 768px) {
+          .contact-buttons .btn {
+            margin-bottom: 10px;
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          
+          /* Reset right margin since buttons are stacked */
+          .contact-buttons .btn.me-2 {
+            margin-right: auto !important;
+          }
         }
       `}</style>
     </div>
