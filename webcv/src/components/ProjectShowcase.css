@@ -96,7 +96,7 @@
 @media (max-width: 768px) {
   .project-showcase-container {
     flex-direction: column;
-    max-height: 90vh;
+    height: 70vh;
     padding: 1.5rem;
     gap: 1.5rem;
   }
