@@ -17,7 +17,7 @@ const ProjectShowcase = () => {
       technologies: ["Python", "TensorFlow", "C++", "Rust"],
       thumbnail: "brainwave_interface_thumb.jpeg",
       images: ["brainwave_interface_1.jpg"],
-      githubLink: "https://github.com/...",
+      githubLink: "https://github.com/Yramklass/BCI-simulation",
       demoLink: "",
       year: "2025",
       month: "1"
@@ -45,7 +45,7 @@ const ProjectShowcase = () => {
       technologies: ["Python", "Django", "Transformers", "PyTorch", "SQL", "React", "Node.js"],
       thumbnail: "reading_tutor_thumb.jpeg",
       images: ["reading_tutor_1.jpg", "reading_tutor_2.jpg"],
-      githubLink: "https://github.com/yourusername/stock-predictor",
+      githubLink: "https://github.com/Yramklass/READ-Automatic-Tutor",
       demoLink: "",
       year: "2024",
       month: "9"
@@ -59,7 +59,7 @@ const ProjectShowcase = () => {
       technologies: ["Node.js", "JavaScript", "React", "SQL", "Spring Boot", "Java"],
       thumbnail: "employee_management_thumb.jpeg",
       images: ["employee_management_1.jpg", "employee_management_2.jpg"],
-      githubLink: "https://github.com/yourusername/ecommerce",
+      githubLink: "https://github.com/Yramklass/Employment-Management-System",
       demoLink: "",
       year: "2024",
       month: "2"
@@ -73,7 +73,7 @@ const ProjectShowcase = () => {
       technologies: ["Python", "Speech Recognition", "JSON", "WolframAlpha"],
       thumbnail: "python_assistant_thumb.jpeg",
       images: ["python_assistant_1.jpg", "python_assistant_2.jpg"],
-      githubLink: "https://github.com/yourusername/gesture-control",
+      githubLink: "https://github.com/Yramklass/Personal-Assistant",
       demoLink: "",
       year: "2023",
       month: "10"
@@ -87,7 +87,7 @@ const ProjectShowcase = () => {
       technologies: ["Python", "Pytorch", "Vision Transformers", "Object Detection", "Image Classification"],
       thumbnail: "honey_analysis_thumb.jpeg",
       images: ["honey_analysis_1.jpg", "honey_analysis_2.jpg"],
-      githubLink: "https://github.com/yourusername/smart-home",
+      githubLink: "",
       demoLink: "",
       year: "2025",
       month: "9"
