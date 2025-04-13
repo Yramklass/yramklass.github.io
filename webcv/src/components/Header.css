@@ -57,7 +57,7 @@
   
   .headerBox {
     height: 100cqh;
-    background-image: url("pfp.jpg");
+    background-image: url("/pfp.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
