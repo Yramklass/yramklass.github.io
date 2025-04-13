@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
 import { Link as ScrollLink } from 'react-scroll';
 
@@ -6,7 +6,8 @@ const HeaderComponent = () => {
   const [scrollY, setScrollY] = useState(0);
   const [scrollDir, setScrollDir] = useState("up");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const mobileMenuRef = useRef(null);
+  
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const updateScroll = () => {
@@ -20,7 +21,35 @@ const HeaderComponent = () => {
     return () => window.removeEventListener("scroll", updateScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
+  useEffect(() => {
+    // Function to handle clicks outside navigation links
+    const handleClickOutside = (event) => {
+      // Only execute if menu is open
+      if (!mobileMenuOpen) return;
+      
+      // Check if the click was on a menu link or the hamburger icon
+      const isMenuLink = event.target.closest('.mobile-menu-link');
+      const isHamburger = event.target.closest('.hamburger-menu');
+      
+      // If the click wasn't on a menu link or hamburger, close the menu
+      if (!isMenuLink && !isHamburger) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    // Add event listener when menu is open
+    if (mobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    
+    // Clean up event listener
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
+  const toggleMobileMenu = (e) => {
+    e.stopPropagation(); // Prevent event from bubbling to document
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
@@ -52,12 +81,70 @@ const HeaderComponent = () => {
         </div>
       </nav>
 
-      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        <ScrollLink to="about" spy smooth duration={500} offset={-80} activeClass="active" onClick={closeMobileMenu}>About</ScrollLink>
-        <ScrollLink to="education" spy smooth duration={500} offset={-80} activeClass="active" onClick={closeMobileMenu}>Education</ScrollLink>
-        <ScrollLink to="experience" spy smooth duration={500} offset={-80} activeClass="active" onClick={closeMobileMenu}>Experience</ScrollLink>
-        <ScrollLink to="projects" spy smooth duration={500} offset={-80} activeClass="active" onClick={closeMobileMenu}>Projects</ScrollLink>
-        <ScrollLink to="contact" spy smooth duration={500} offset={-80} activeClass="active" onClick={closeMobileMenu}>Contact</ScrollLink>
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`} ref={mobileMenuRef}>
+        <div className="close-btn" onClick={closeMobileMenu}>×</div>
+        <div className="mobile-menu-links">
+          <ScrollLink 
+            className="mobile-menu-link"
+            to="about" 
+            spy 
+            smooth 
+            duration={500} 
+            offset={-80} 
+            activeClass="active" 
+            onClick={closeMobileMenu}
+          >
+            About
+          </ScrollLink>
+          <ScrollLink 
+            className="mobile-menu-link"
+            to="education" 
+            spy 
+            smooth 
+            duration={500} 
+            offset={-80} 
+            activeClass="active" 
+            onClick={closeMobileMenu}
+          >
+            Education
+          </ScrollLink>
+          <ScrollLink 
+            className="mobile-menu-link"
+            to="experience" 
+            spy 
+            smooth 
+            duration={500} 
+            offset={-80} 
+            activeClass="active" 
+            onClick={closeMobileMenu}
+          >
+            Experience
+          </ScrollLink>
+          <ScrollLink 
+            className="mobile-menu-link"
+            to="projects" 
+            spy 
+            smooth 
+            duration={500} 
+            offset={-80} 
+            activeClass="active" 
+            onClick={closeMobileMenu}
+          >
+            Projects
+          </ScrollLink>
+          <ScrollLink 
+            className="mobile-menu-link"
+            to="contact" 
+            spy 
+            smooth 
+            duration={500} 
+            offset={-80} 
+            activeClass="active" 
+            onClick={closeMobileMenu}
+          >
+            Contact
+          </ScrollLink>
+        </div>
       </div>
       
       <header className="headerBox">

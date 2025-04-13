@@ -77,6 +77,7 @@
   display: none;
   cursor: pointer;
   z-index: 1000;
+  padding: 10px;
 }
 
 .hamburger-icon {
@@ -127,7 +128,29 @@
   transform: rotate(-135deg);
 }
 
-/* Mobile menu */
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile menu - transparent with interaction */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -135,11 +158,8 @@
   right: 0;
   height: 0;
   width: 100%;
-  background: #0b0f1a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: rgba(11, 15, 26, 0.7); /* More transparent background */
+  backdrop-filter: blur(8px); /* Blur effect for better readability */
   z-index: 998;
   overflow: hidden;
   transition: height 0.4s ease;
@@ -148,22 +168,83 @@
 
 .mobile-menu.open {
   height: 100vh;
+}
+
+.mobile-menu-links {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 80px 0;
 }
 
-.mobile-menu a {
+/* Updated mobile menu links - clean design without boxes */
+.mobile-menu-link {
   color: white;
   text-decoration: none;
-  margin: 1rem 0;
-  font-size: 1.2rem;
+  margin: 1.2rem 0;
+  font-size: 1.4rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+  padding: 0.5rem 0;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 0.5px;
 }
 
-.mobile-menu.open a {
+.mobile-menu.open .mobile-menu-link {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+/* Staggered animation for menu items */
+.mobile-menu-link:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.mobile-menu-link:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.mobile-menu-link:nth-child(4) {
+  transition-delay: 0.25s;
+}
+
+.mobile-menu-link:nth-child(5) {
+  transition-delay: 0.3s;
+}
+
+/* Underline effect for mobile menu links */
+.mobile-menu-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.mobile-menu-link:hover::after {
+  width: 30px;
+}
+
+/* Active state for mobile menu links - just an underline */
+.mobile-menu-link.active {
+  font-weight: 600;
+}
+
+.mobile-menu-link.active::after {
+  width: 60px;
+  height: 2px;
 }
 
 .headerBox {
@@ -232,5 +313,10 @@
   
   .signature-logo {
     height: 30px;
+  }
+  
+  .mobile-menu-link {
+    font-size: 1.2rem;
+    margin: 1rem 0;
   }
 }
