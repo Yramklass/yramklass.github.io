@@ -1,11 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ProjectModal from './ProjectModal';
-import './ProjectShowcase.css'; // <- new CSS file for custom styles
-
+import './ProjectShowcase.css';
+import { ChevronRight } from 'lucide-react';
 
 const ProjectShowcase = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const carouselRef = useRef(null);
+
+  // Check if viewport is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Track scroll for hiding the swipe indicator
+  useEffect(() => {
+    if (!carouselRef.current || !isMobile) return;
+    
+    const handleScroll = () => {
+      if (carouselRef.current.scrollLeft > 10) {
+        setIsScrolled(true);
+      }
+    };
+    
+    const scrollElement = carouselRef.current;
+    scrollElement.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      if (scrollElement) {
+        scrollElement.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [isMobile]);
 
   const projects = [
     {
@@ -104,7 +143,6 @@ const ProjectShowcase = () => {
     return dateB - dateA;
   });
 
-
   return (
     <div id='projects' className="project-showcase-container">
       {/* Left text section */}
@@ -117,27 +155,43 @@ const ProjectShowcase = () => {
         </p>
       </div>
 
-      {/* Right vertical carousel */}
+      {/* Project carousel - vertical on desktop, horizontal on mobile */}
       <div className="project-carousel-vertical">
-        <div className="carousel-scroll">
+        <div 
+          ref={carouselRef}
+          className={`carousel-scroll ${isScrolled ? 'scrolled' : ''}`}
+        >
           {sortedProjects.map((project) => (
             <div
-            key={project.id}
-            className="project-card"
-            onClick={() => {
-              setSelectedProject(project);
-              setShowModal(true);
-            }}
-            style={{ backgroundImage: `url(${project.thumbnail})` }}
-          >
-            <div className="project-info">
-              <h4>{project.title}</h4>
-              <p>{project.shortDescription}</p>
+              key={project.id}
+              className="project-card"
+              onClick={() => {
+                setSelectedProject(project);
+                setShowModal(true);
+              }}
+              style={{ backgroundImage: `url(${project.thumbnail})` }}
+            >
+              <div className="project-info">
+                <h4>{project.title}</h4>
+                <p>{project.shortDescription}</p>
+              </div>
             </div>
-          </div>
-          
           ))}
+          
+          {/* Swipe indicator for mobile */}
+          {isMobile && !isScrolled && (
+            <div className="swipe-indicator">
+              <ChevronRight color="white" size={24} />
+            </div>
+          )}
         </div>
+        
+        {/* Mobile scroll hint */}
+        {isMobile && (
+          <div className="mobile-scroll-hint">
+            Swipe to explore more projects
+          </div>
+        )}
       </div>
 
       {/* Modal */}
