@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
 import './ProjectShowcase.css'; // <- new CSS file for custom styles
 
+
 const ProjectShowcase = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -105,7 +106,7 @@ const ProjectShowcase = () => {
 
 
   return (
-    <div className="project-showcase-container">
+    <div id='projects' className="project-showcase-container">
       {/* Left text section */}
       <div className="project-intro">
         <h2>Projects</h2>

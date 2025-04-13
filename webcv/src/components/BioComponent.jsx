@@ -3,7 +3,6 @@
     import { ImageComponent } from './ImageComponent'
     import AboutComponent from './AboutComponent'
 
-    import ContactComponent from './ContactComponent'
 
     const BioComponent = () => {
     return (

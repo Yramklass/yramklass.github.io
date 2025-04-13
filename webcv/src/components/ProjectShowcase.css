@@ -38,11 +38,19 @@
     overflow-y: auto;
     scroll-behavior: smooth;
     padding-right: 1rem;
+  
+    /* Hide scrollbar for Webkit (Chrome, Safari) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+  
+  .carousel-scroll::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
   }
   
   .project-card {
     position: relative;
-    height: 60cqh;
+    height: 50cqh;
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 1.5rem;

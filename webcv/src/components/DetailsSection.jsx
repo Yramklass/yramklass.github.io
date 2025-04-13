@@ -35,8 +35,8 @@ const DetailsSection = () => {
     <div className="section-text">
       <h2>Work Experience</h2>
       <p>
-        I've worked on various projects, from full-stack web apps to machine learning pipelines.
-        Here's a look at some of my recent work.
+        My experiences in the workplace have been formative, and include a position as a tutor in the Computer Science department at UCT (2024-current), freelance 
+        work as a full-stack web developer, and several volunteering positions. 
       </p>
     </div>
 
