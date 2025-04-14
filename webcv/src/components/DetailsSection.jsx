@@ -41,10 +41,10 @@ const DetailsSection = () => {
     </div>
 
     <div className="experience-grid">
-      <img src="job1.jpg" alt="Job 1" />
-      <img src="lmao.jpg" alt="Job 2" />
-      <img src="job3.png" alt="Job 3" />
-      <img src="job4.png" alt="Job 4" />
+      <img src="bpc_logo.png" alt="Job 1" />
+      <img src="haven_logo.jpg" alt="Job 2" />
+      <img src="shawco_logo.png" alt="Job 3" />
+      <img src="UCT_Logo.png" alt="Job 4" />
     </div>
   </div>
 </section>

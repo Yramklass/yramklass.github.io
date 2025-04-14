@@ -83,24 +83,64 @@
   flex: 1;
   min-width: 280px;
 }
-
-/* Right side (grid) */
+/* Logo collage styling */
 .experience-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-  min-width: 280px;
-  justify-content: end;
+  position: relative;
+  width: 340px;
+  height: 260px;
+  margin-top: 1rem;
+  perspective: 600px;
 }
 
 .experience-grid img {
-  width: 100%;
+  position: absolute;
+  width: 160px; /* Increased size */
   height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Position each logo uniquely */
+.experience-grid img:nth-child(1) {
+  top: 0;
+  left: 20px;
+  transform: rotate(-5deg);
+  z-index: 4;
+}
+
+.experience-grid img:nth-child(2) {
+  top: 30px;
+  right: 10px;
+  transform: rotate(7deg);
+  z-index: 3;
+}
+
+.experience-grid img:nth-child(3) {
+  bottom: 20px;
+  left: 0;
+  transform: rotate(-8deg);
+  z-index: 2;
+}
+
+.experience-grid img:nth-child(4) {
+  bottom: 0;
+  right: 30px;
+  transform: rotate(4deg);
+  z-index: 1;
+}
+
+/* Hover effects */
+.experience-grid img:hover {
+  transform: translateY(-5px) scale(1.05) rotate(0deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .experience-layout {
     flex-direction: column;
@@ -108,6 +148,41 @@
   }
 
   .experience-grid {
-    justify-content: center;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Adjust positioning for mobile to avoid overflow */
+  .experience-grid img:nth-child(1) {
+    top: 0;
+    left: 30px;
+  }
+  
+  .experience-grid img:nth-child(2) {
+    top: 20px;
+    right: 30px;
+  }
+  
+  .experience-grid img:nth-child(3) {
+    bottom: 20px;
+    left: 30px;
+  }
+  
+  .experience-grid img:nth-child(4) {
+    bottom: 0;
+    right: 30px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+  .experience-grid {
+    width: 260px;
+    height: 280px;
+  }
+  
+  .experience-grid img {
+    width: 140px;
   }
 }
