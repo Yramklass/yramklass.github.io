@@ -70,8 +70,9 @@ const ProjectShowcase = () => {
       technologies: ["React", "Node.js", "SQL", "Spring Boot", "Java", "JWT", "Redux"],
       thumbnail: "/Property_Development_Catalogue/property_catalogue_thumb.jpeg",
       images: [
-        "/Property_Development_Catalogue/property_catalogue_1.jpg",
-        "/Property_Development_Catalogue/property_catalogue_2.jpg"
+        "/Property_Development_Catalogue/property_catalogue_1.png",
+        "/Property_Development_Catalogue/property_catalogue_2.png",
+        "/Property_Development_Catalogue/property_catalogue_3.png"
       ],
       githubLink: "",
       demoLink: "",
@@ -107,8 +108,9 @@ const ProjectShowcase = () => {
       technologies: ["Node.js", "JavaScript", "React", "SQL", "Spring Boot", "Java"],
       thumbnail: "/Employee_Management_System/employee_management_thumb.jpeg",
       images: [
-        "/Employee_Management_System/employee_management_1.jpg",
-        "/Employee_Management_System/employee_management_2.jpg"
+        "/Employee_Management_System/employee_management_1.png",
+        "/Employee_Management_System/employee_management_2.png",
+        "/Employee_Management_System/employee_management_3.png"
       ],
       githubLink: "https://github.com/Yramklass/Employment-Management-System",
       demoLink: "",
