@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Container, Row, Col, Button, OverlayTrigger, Tooltip,
-  Badge, Toast, ToastContainer
+  Container, Row, Col, Button, Badge, Toast, ToastContainer
 } from 'react-bootstrap';
 import {
   FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload, FaQrcode, FaShareAlt
 } from 'react-icons/fa';
 import { QRCodeSVG } from 'qrcode.react';
+import { Tooltip } from 'react-tooltip'; // Updated import
 
 const ContactSection = () => {
   const [showToast, setShowToast] = useState(false);
@@ -15,17 +15,12 @@ const ContactSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if device is mobile on component mount and on window resize
     const checkMobile = () => {
       setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768);
     };
-    
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const email = 'yramklass@gmail.com';
@@ -36,19 +31,16 @@ const ContactSection = () => {
   const handleCopy = (text, label) => {
     navigator.clipboard.writeText(text);
     setToastMsg(`${label} copied to clipboard!`);
-    setShowToast(false); // Reset first to retrigger toast
-    setTimeout(() => setShowToast(true), 50); // Small delay to force rerender
+    setShowToast(false);
+    setTimeout(() => setShowToast(true), 50);
   };
 
   const handleShareContact = async () => {
-    // Contact info to share
     const contactInfo = {
       title: "Yash Ramklass",
       text: "Contact information for Yash Ramklass",
       url: vcardUrl
     };
-
-    // Check if browser supports sharing
     if (navigator.share) {
       try {
         await navigator.share(contactInfo);
@@ -61,7 +53,6 @@ const ContactSection = () => {
         }
       }
     } else {
-      // Fallback for browsers that don't support the Web Share API
       setToastMsg("Sharing not supported on this browser");
       setShowToast(true);
     }
@@ -85,11 +76,7 @@ const ContactSection = () => {
       label: 'Email',
       tooltip: `Email: ${email}`,
       onClick: () => {
-        if (isMobile) {
-          window.location.href = `mailto:${email}`;
-        } else {
-          handleCopy(email, 'Email');
-        }
+        isMobile ? window.location.href = `mailto:${email}` : handleCopy(email, 'Email');
       },
     },
     {
@@ -97,11 +84,7 @@ const ContactSection = () => {
       label: 'Phone',
       tooltip: `Phone: ${phone}`,
       onClick: () => {
-        if (isMobile) {
-          window.location.href = `tel:${phone}`;
-        } else {
-          handleCopy(phone, 'Phone number');
-        }
+        isMobile ? window.location.href = `tel:${phone}` : handleCopy(phone, 'Phone number');
       },
     },
   ];
@@ -117,14 +100,14 @@ const ContactSection = () => {
         <Row className="justify-content-center">
           {contactItems.map(({ icon, label, tooltip, onClick }, idx) => (
             <Col xs={6} sm={4} md={3} className="mb-4 d-flex justify-content-center" key={idx}>
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip id={`tooltip-${label}`}>{tooltip}</Tooltip>}
+              <div
+                className="contact-icon contact-tooltip"
+                data-tooltip-content={tooltip}
+                onClick={onClick}
+                style={{ cursor: 'pointer' }}
               >
-                <div className="contact-icon" onClick={onClick} style={{ cursor: 'pointer' }}>
-                  <div className="icon-wrapper">{icon}</div>
-                </div>
-              </OverlayTrigger>
+                <div className="icon-wrapper">{icon}</div>
+              </div>
             </Col>
           ))}
         </Row>
@@ -133,11 +116,9 @@ const ContactSection = () => {
           <Button variant="outline-dark" className="me-2" href="/downloads/Yash_CV_2025.pdf" download>
             <FaDownload className="me-1" /> Download CV
           </Button>
-          
           <Button variant="outline-dark" className="me-2" href="/downloads/yashramklass.vcf" download>
             <FaDownload className="me-1" /> Download vCard
           </Button>
-          
           {isMobile ? (
             <Button variant="outline-dark" onClick={handleShareContact}>
               <FaShareAlt className="me-1" /> Share Contact
@@ -156,6 +137,13 @@ const ContactSection = () => {
           </div>
         )}
       </Container>
+
+      <Tooltip
+        anchorSelect=".contact-tooltip"
+        place="top"
+        delayShow={50}
+        className="custom-react-tooltip"
+      />
 
       <ToastContainer
         position="bottom-center"
@@ -221,7 +209,7 @@ const ContactSection = () => {
           padding-top: 75px;
           padding-bottom: 75px;
         }
-        
+
         @media (max-width: 768px) {
           .contact-buttons .btn {
             margin-bottom: 10px;
@@ -230,12 +218,21 @@ const ContactSection = () => {
             margin-left: auto;
             margin-right: auto;
           }
-          
-          /* Reset right margin since buttons are stacked */
+
           .contact-buttons .btn.me-2 {
             margin-right: auto !important;
           }
         }
+
+        .custom-react-tooltip {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  color: #fff !important;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
       `}</style>
     </div>
   );

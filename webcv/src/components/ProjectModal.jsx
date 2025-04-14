@@ -57,63 +57,81 @@ const ProjectModal = ({ show, onHide, project }) => {
       </div>
       
       {!isMinimized && (
-        <Modal.Body className="custom-modal-body">
-          <Carousel>
-            {project.images.map((image, index) => (
-              <Carousel.Item key={index}>
-                <img
-                  className="d-block w-100"
-                  src={image}
-                  alt={`${project.title} - view ${index + 1}`}
-                  style={{ 
-                    height: isMaximized ? '600px' : '400px', 
-                    objectFit: 'cover', 
-                    borderRadius: '12px' 
-                  }}
-                />
-              </Carousel.Item>
-            ))}
-          </Carousel>
+       <Modal.Body className="custom-modal-body">
+       {project.images && project.images.length > 0 ? (
+         <Carousel>
+           {project.images.map((image, index) => (
+             <Carousel.Item key={index}>
+               <img
+                 className="d-block w-100"
+                 src={image}
+                 alt={`${project.title} - view ${index + 1}`}
+                 style={{
+                   height: isMaximized ? '600px' : '400px',
+                   objectFit: 'cover',
+                   borderRadius: '12px'
+                 }}
+               />
+             </Carousel.Item>
+           ))}
+         </Carousel>
+       ) : (
+         <div className="no-images-box text-center p-4">
+           <p className="m-0">No project images available</p>
+         </div>
+       )}
+     
+     <div className="mt-4">
+  <h5 className="mb-2">Description</h5>
+  
+  <p>{project.description}</p>
+  
+  {(project.year && project.month) && (
+    <p className="project-date ">
+      <strong>Completion date:</strong> {new Date(project.year, project.month - 1).toLocaleString('default', {
+        year: 'numeric',
+        month: 'short',
+      })}
+    </p>
+  )}
+  
 
-          <div className="mt-4">
-            <h5>Description</h5>
-            <p>{project.description}</p>
-
-            <h5>Technologies Used</h5>
-            <div className="d-flex flex-wrap gap-2 mb-3">
-              {project.technologies.map((tech, index) => (
-                <Badge key={index} className="custom-badge">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-
-            <div className="d-flex flex-wrap gap-3 mt-4">
-              {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-light mb-2"
-                >
-                  <FaGithub className="me-2" />
-                  GitHub
-                </a>
-              )}
-              {project.demoLink && (
-                <a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary mb-2"
-                >
-                  <ExternalLink className="me-2" size={18} />
-                  Live Demo
-                </a>
-              )}
-            </div>
-          </div>
-        </Modal.Body>
+  <h5>Technologies Used</h5>
+         <div className="d-flex flex-wrap gap-2 mb-3">
+           {project.technologies.map((tech, index) => (
+             <Badge key={index} className="custom-badge">
+               {tech}
+             </Badge>
+           ))}
+         </div>
+     
+         <div className="d-flex flex-wrap gap-3 mt-4">
+           {project.githubLink && (
+             <a
+               href={project.githubLink}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="btn btn-outline-light mb-2"
+             >
+               <FaGithub className="me-2" />
+               GitHub
+             </a>
+           )}
+           {project.demoLink && (
+             <a
+               href={project.demoLink}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="btn btn-primary mb-2"
+             >
+               <ExternalLink className="me-2" size={18} />
+               Live Demo
+             </a>
+           )}
+         </div>
+       </div>
+     </Modal.Body>
+     
       )}
       
       {isMinimized && (

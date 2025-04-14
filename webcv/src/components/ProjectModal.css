@@ -118,3 +118,15 @@
   height: 100vh;
   border-radius: 0;
 }
+.no-images-box {
+  border: 1px dashed #4a4a4a;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: #999;
+  font-style: italic;
+}
+
+.project-date {
+  font-size: 0.875rem;
+  color: #bbb;
+}

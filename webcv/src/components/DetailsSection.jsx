@@ -9,8 +9,8 @@ const DetailsSection = () => {
         <img src="mirror.jpg" alt="Profile" className="profile-img" />
         <div className="glass-card">
           <p className="section-text">
-            Hi! I'm Yash, a passionate Full-Stack Developer with a background in Computer Science from UCT.
-            I enjoy building beautiful, functional tech that solves real-world problems.
+          Hi! I'm Yash, a Computer Science graduate from UCT with a passion for building elegant, effective tech that solves real-world problems.
+           I'm especially drawn to systems thinking, collaborative problem-solving, and using data to drive meaningful outcomes.
           </p>
         </div>
       </section>
@@ -23,7 +23,7 @@ const DetailsSection = () => {
             <h2>Education</h2>
             <p>
               I studied Business Science in Computer Science at the University of Cape Town. My coursework combined
-              economics, finance, and programming — giving me a powerful problem-solving toolkit.
+              economics, finance, and software engineering — giving me a versatile and analytical problem-solving toolkit.
             </p>
           </div>
         </div>
@@ -35,8 +35,8 @@ const DetailsSection = () => {
     <div className="section-text">
       <h2>Work Experience</h2>
       <p>
-        My experiences in the workplace have been formative, and include a position as a tutor in the Computer Science department at UCT (2024-current), freelance 
-        work as a full-stack web developer, and several volunteering positions. 
+      My professional experience includes tutoring in UCT’s Computer Science department (since 2024), freelance web development, and several meaningful volunteer roles. 
+      These experiences have strengthened my communication, leadership, and collaboration skills—core to how I work best. 
       </p>
     </div>
 
