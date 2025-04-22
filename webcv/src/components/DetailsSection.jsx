@@ -6,7 +6,7 @@ const DetailsSection = () => {
     <div>
       {/* About Me */}
       <section id="about" className="section about-section">
-        <img src="mirror.jpg" alt="Profile" className="profile-img" />
+        <img src="Yash_HS_black_crop.jpg" alt="Profile" className="profile-img" />
         <div className="glass-card">
           <p className="section-text">
           Hi! I'm Yash, a Computer Science graduate from UCT with a passion for building elegant, effective tech that solves real-world problems.
