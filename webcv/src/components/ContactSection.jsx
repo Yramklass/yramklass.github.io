@@ -131,7 +131,7 @@ const ContactSection = () => {
         </div>
 
         {!isMobile && showQR && (
-          <div className="text-center mt-3">
+          <div className="text-center mt-5">
             <QRCodeSVG value={vcardUrl} size={128} />
             <p className="mt-2">Scan to add contact</p>
           </div>

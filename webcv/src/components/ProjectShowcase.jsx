@@ -45,6 +45,7 @@ const ProjectShowcase = () => {
       }
     };
   }, [isMobile]);
+  
 
   const projects = [
     {

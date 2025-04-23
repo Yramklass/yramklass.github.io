@@ -52,14 +52,79 @@
 }
 
 .profile-img {
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 2rem;
-  border: 5px solid #0b0f1a;
+  display: block;
+}
+/* New class specifically for back image */
+.back-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Remove border-radius from here as it's already on the container */
 }
 
+.flip-card {
+  width: 220px;
+  height: 220px;
+  perspective: 1000px;
+  margin-bottom: 2rem;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: 5px solid #0b0f1a; /* replaces border */
+}
+
+.flip-card-front {
+  background-color: #000;
+}
+
+.flip-card-back {
+  background-color: #0b0f1a;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+/* For desktop (hover effect) */
+@media (min-width: 769px) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* For mobile (click effect) */
+@media (max-width: 768px) {
+  .flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+}
 /* Optional: glassy card wrapper */
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
@@ -92,9 +157,14 @@
   perspective: 600px;
 }
 
-.experience-grid img {
+.experience-grid a {
   position: absolute;
-  width: 160px; /* Increased size */
+  display: inline-block;
+  transition: z-index 0.3s ease;
+}
+
+.experience-grid img {
+  width: 160px;
   height: auto;
   object-fit: contain;
   padding: 0.75rem;
@@ -104,41 +174,58 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Position each logo uniquely */
-.experience-grid img:nth-child(1) {
+/* Original rotated layout */
+.experience-grid a:nth-child(1) {
   top: 0;
   left: 20px;
   transform: rotate(-5deg);
   z-index: 4;
 }
 
-.experience-grid img:nth-child(2) {
+.experience-grid a:nth-child(2) {
   top: 30px;
   right: 10px;
   transform: rotate(7deg);
   z-index: 3;
 }
 
-.experience-grid img:nth-child(3) {
+.experience-grid a:nth-child(3) {
   bottom: 20px;
   left: 0;
   transform: rotate(-8deg);
   z-index: 2;
 }
 
-.experience-grid img:nth-child(4) {
+.experience-grid a:nth-child(4) {
   bottom: 0;
   right: 30px;
   transform: rotate(4deg);
   z-index: 1;
 }
+.experience-grid a:nth-child(1) img {
+  transform: rotate(-5deg);
+}
+.experience-grid a:nth-child(2) img {
+  transform: rotate(7deg);
+}
+.experience-grid a:nth-child(3) img {
+  transform: rotate(-8deg);
+}
+.experience-grid a:nth-child(4) img {
+  transform: rotate(4deg);
+}
 
-/* Hover effects */
-.experience-grid img:hover {
-  transform: translateY(-5px) scale(1.05) rotate(0deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+/* Hover only scales and lifts, but keeps original rotation */
+.experience-grid a:hover {
   z-index: 10;
 }
+
+.experience-grid a:hover img {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
