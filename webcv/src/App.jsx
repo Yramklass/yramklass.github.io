@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const favicon = document.getElementById('favicon');
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    console.log('Dark mode?', darkMode.matches);
+
 
     const updateFavicon = () => {
       if (favicon) {
