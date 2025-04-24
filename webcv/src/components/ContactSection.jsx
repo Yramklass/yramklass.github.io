@@ -69,7 +69,7 @@ const ContactSection = () => {
       icon: <FaLinkedin />,
       label: 'LinkedIn',
       tooltip: 'View LinkedIn',
-      onClick: () => window.open('https://www.linkedin.com/in/yash-ramklass-a34109208/'),
+      onClick: () => window.open('https://www.linkedin.com/in/yash-ramklass'),
     },
     {
       icon: <FaEnvelope />,
