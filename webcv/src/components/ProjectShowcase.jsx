@@ -141,10 +141,24 @@ const ProjectShowcase = () => {
       technologies: ["Python", "Pytorch", "Vision Transformers", "CNNs", "YOLO"],
       thumbnail: "/AI_Honey_Analysis/honey_analysis_thumb.jpeg",
       images: [],
-      githubLink: "",
+      githubLink: "https://github.com/Yramklass/POL-ID",
       demoLink: "",
       year: 2025,
       month: 9
+    },
+    {
+      id: 7,
+      title: "FNB DataQuest Recommender System",
+      category: "Machine Learning",
+      shortDescription: "Product recommendation system for FNB",
+      description: "First-place winning project in First National Bank's DataQuest 2025 challenge. This recommender system leveraged user interaction data to suggest relevant banking products. It used a two-tower architecture with BPR loss, session embeddings, and transformer-based enhancements to capture user intent and improve personalization.",
+      technologies: ["Python", "PyTorch", "TorchRec", "BPR Loss", "Transformers"],
+      thumbnail: "/FNB_Dataquest/fnb_logo.jpg",
+      images: [],
+      githubLink: "https://github.com/Yramklass/FNBDataQuest2025",
+      demoLink: "",
+      year: 2025,
+      month: 5
     }
   ];
   
